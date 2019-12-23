@@ -116,6 +116,12 @@
             {
                 color:red;
             }
+            a
+            {
+                color:white;
+                text-decoration-style: none;
+                text-emphasis-style: none;
+            }
             p
             {
                 
@@ -131,8 +137,54 @@
                 border-color: green;
                 border-width: 10px;
             }
+            p.blogpost
+            {
+                color: red;
+                font-size: 13px;
+                
+            }
+            a.buttonlink:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+            }
+
+            a.buttonlink:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+            }
+
+            a.buttonlink:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+
+            a.buttonlink:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+            }
         </style>
 
-        <p id = "p1">I am p1, so I look different</p>
+        <p id = "p1">I am p1, so I look different!</p>
+        <p class = "blogpost">I am a blogpost class paragraph! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus harum aliquam, cupiditate eveniet nisi qui rem itaque quia necessitatibus cumque molestias non, aut quidem sequi. Dignissimos dolorum quia accusamus neque.</p>
+        
+        <!--external links-->
+        <!--<link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+        -->
+        <pre>
+            The target attribute can have one of the following values:
+            _blank - Opens the linked document in a new window or tab
+            _self - Opens the linked document in the same window/tab as it was clicked (this is default)
+            _parent - Opens the linked document in the parent frame
+            _top - Opens the linked document in the full body of the window
+            framename - Opens the linked document in a named frame
+        </pre>
+
+        <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+        <br>
+        <a class = buttonlink href = "#">test button</a>
     </body>
 </html>
