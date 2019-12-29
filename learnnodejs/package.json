@@ -1,0 +1,18 @@
+{
+  "name": "learnnodejs",
+  "version": "1.0.0",
+  "description": "learning node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "learn",
+    "js",
+    "node",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Armeet Jatyani",
+  "license": "ISC"
+}
