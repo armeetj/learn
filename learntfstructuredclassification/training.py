@@ -30,7 +30,24 @@ logging.debug("finished import layers\n")
 #DATA IMPORT
 logging.debug("started data download...")
 URL = 'https://storage.googleapis.com/applied-dl/heart.csv'
+#read csv into dataframe object
 dataframe = pd.read_csv(URL)
-logging.debug("finished data download...")
+logging.debug("finished data download...\n")
 
-logging.debug(dataframe.head())
+#DATA SPLITTING
+train, test = train_test_split(dataframe, test_size=0.2)
+train, val = train_test_split(train, test_size=0.2)
+logging.debug(str(len(train)) + ' train examples')
+logging.debug(str(len(val)) + ' validation examples')
+logging.debug(str(len(test)) + ' test examples\n')
+
+#Convert dataframe to tf.data dataset
+#A utility method to create a tf.data dataset from a Pandas Dataframe
+def df_to_dataset(dataframe, shuffle=True, batch_size=32):
+  dataframe = dataframe.copy()
+  labels = dataframe.pop('target')
+  ds = tf.data.Dataset.from_tensor_slices((dict(dataframe), labels))
+  if shuffle:
+    ds = ds.shuffle(buffer_size=len(dataframe))
+  ds = ds.batch(batch_size)
+  return ds
